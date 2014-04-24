@@ -1,0 +1,19 @@
+查看帮助
+
+$ ./cli.py --help
+
+命令行参数方式
+
+$ ./cli.py --bind-host=192.168.100.20 --bind-port=8080 --web-run-mode=local
+
+指定配置文件
+
+$ ./cli.py --config-file=./a1.conf
+
+同时也支持混合方式
+
+$ ./cli.py --bind-host=192.168.100.20 --config-file=./a1.conf
+
+Note
+
+参数会有从左到右的覆盖规则，可自行多种组合尝试
