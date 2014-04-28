@@ -1,20 +1,31 @@
+#! /usr/bin/env python
 
-# coding:utf8
+import threading
+import time
 
-import time, threading
+class myThread(threading.Thread):
+	def __init__(self, threadname):
+		threading.Thread.__init__(self, name=threadname)
+		self.st = 2
+	
+	def run(self):
+		time.sleep(self.st)
+		print self.getName()
+	def setSt(self, t):
+		self.st = t
+		
+def fun1():
+	t1.start()
+	print "fun1 done"
+	
+def fun2():
+	t2.start()
+	print "fun2 done"
 
-# 新线程执行的代码:
-def loop():
-    print 'thread %s is running...' % threading.current_thread().name
-    n = 0
-    while n < 5:
-        n = n + 1
-        print 'thread %s >>> %s' % (threading.current_thread().name, n)
-        time.sleep(1)
-    print 'thread %s ended.' % threading.current_thread().name
-
-print 'thread %s is running...' % threading.current_thread().name
-t = threading.Thread(target=loop, name='LoopThread')
-t.start()
-t.join()
-print 'thread %s ended.' % threading.current_thread().name
+t1=myThread("t1")
+t2=myThread("t2")
+t2.setSt(10);
+t2.setDaemon(True)
+fun1()
+fun2()
+print "now u will see me"
