@@ -1,7 +1,9 @@
 #!/bin/bash
 
 #
-# 从两个url中得到两个json，然后比较不同
+# Description: 从两个url中得到两个json，然后比较不同
+# Author: hongjin.cao@qunar.com
+# Date: 2014-5-15
 #
 
 NEWHOST="http://l-lp3.f.dev.cn6.qunar.com:8001"
@@ -15,7 +17,7 @@ if [ $# != 1  ];then
 	exit 1
 fi
 
-# 根据ur生成url
+# 根据uri和HOST生成url
 uri=$1
 newurl="$NEWHOST$uri"
 oldurl="$OLDHOST$uri"
