@@ -6,8 +6,8 @@
 # Date: 2014-5-15
 #
 
-NEWHOST="http://l-lp3.f.dev.cn6.qunar.com:8001"
-OLDHOST="http://ws.qunar.com"
+NEWHOST="http://www.hostnew.com"
+OLDHOST="http://www.hostold.com"
 NEWJSON="newjson.json"
 OLDJSON="oldjson.json"
 
