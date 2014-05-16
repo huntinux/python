@@ -3,9 +3,10 @@
 
 #
 # Description: 从url中读取json
-# Author: hongjin.cao@qunar.com
+# Author: huntinux@gmail.com
 # Date: 2014-5-15
 #
+
 import json
 import urllib2
 import re
@@ -49,6 +50,6 @@ if __name__ == "__main__":
 	realjson = remove_invalid_char(urlcontent)
 
 	# 打印json
-	jsondict=eval(realjson)
+	jsondict = json.loads(realjson)
 	print json.dumps(jsondict, sort_keys=True, indent=2, encoding="UTF-8", ensure_ascii=False)
     #print json.dumps(jsondict, sort_keys=True, indent=2) # 排序，缩进2个空格
