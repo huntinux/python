@@ -33,6 +33,12 @@ def main():
     redis_conn.hset('Deploy', hostname, "code1")
     repo = redis_conn.hget("Deploy", hostname)
     print repo
+    
+    # 查询所有
+    print redis_conn.hgetall("Deploy")
+
+    # 删除全部
+    redis_conn.delete("Deploy")
 
 if __name__ == "__main__":
     main()
